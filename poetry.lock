@@ -58,6 +58,20 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "heroku"
 version = "0.1.4"
 description = "Heroku API Wrapper."
@@ -146,7 +160,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "94b6823f25749ea392c96c2a762bce419853dbbd32a6946d685b069a07b8d9fb"
+content-hash = "4f51cb62796ca69e167dcdfc43aa2dbd07fb94f8e341b37f624dbdb178f58e70"
 
 [metadata.files]
 asgiref = []
@@ -154,6 +168,7 @@ asgiref = []
 certifi = []
 charset-normalizer = []
 django = []
+gunicorn = []
 heroku = []
 idna = []
 python-dateutil = []
