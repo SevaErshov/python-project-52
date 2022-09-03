@@ -61,7 +61,7 @@ bcrypt = ["bcrypt"]
 name = "gunicorn"
 version = "20.1.0"
 description = "WSGI HTTP Server for UNIX"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -160,7 +160,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "a49462d2cd48761ba2944b159b899343a9d6c02ef7ce37bfb4b0a72a10a01d0e"
+content-hash = "539c235f3e1209a5c37382d49782ac944a73c17c276afa47c6b43d1c8165ae48"
 
 [metadata.files]
 asgiref = []
