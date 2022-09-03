@@ -1,3 +1,0 @@
-python>=3.8
-Django>=4.1
-psycopg2==2.8.6
