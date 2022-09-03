@@ -1,1 +1,1 @@
-web: poetry run python3 manage.py runserver
+web: poetry run gunicorn task_manager.wsgi --log-file -
