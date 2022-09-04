@@ -1,5 +1,7 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
 
 
 def index(request):
-    return HttpResponse("<h1 style=\" font-size: 200px;\">Я фанат Михаила Лабковского и сериала \'Доктор Хаус\'!</h1>")
+    return render(request, 'index.html')
