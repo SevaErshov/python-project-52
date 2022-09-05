@@ -1,15 +1,23 @@
+<!DOCTYPE html>
 {% load bootstrap4 %}
 {% load i18n %}
 
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер задач</title>
+</head>
+<body>
+    {% block content %}
 
-{% block content %}
+        {% bootstrap_button "Вход" %}
+        {% bootstrap_button "Регистрация" %}
+        {% bootstrap_button "Пользователи" %}
 
-    {% bootstrap_button "Вход" %}
-    {% bootstrap_button "Регистрация" %}
-    {% bootstrap_button "Пользователи" %}
-
-{% endblock %}
-
-<h1 style="font-size: 100;">Я всё ещё фанат Лабковского и Хауса!</h1>
+    {% endblock %}
+</body>
+</html>
