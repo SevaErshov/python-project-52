@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">{{ Users }}</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">{{ UserName }}</th>
+                <th scope="col">{{ Name }}</th>
+                <th scope="col">{{ Created }}</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <th>{{user.id}}</th>
+                    <td>{{user.username}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/users/<int:pk>/update/">{{ Edit }}</a>
+                            </li>
+                            <li>
+                                <a href="/users/<int:pk>/delete/">{{ Delete }}</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

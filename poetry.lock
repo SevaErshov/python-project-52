@@ -119,6 +119,28 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "jinja2"
+version = "3.1.2"
+description = "A very fast and expressive template engine."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+MarkupSafe = ">=2.0"
+
+[package.extras]
+i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "markupsafe"
+version = "2.1.1"
+description = "Safely add untrusted strings to HTML/XML markup."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "python-dateutil"
 version = "1.5"
 description = "Extensions to the standard python 2.3+ datetime module"
@@ -195,7 +217,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "c8bc8283bd96b956415846f7b1ad6ca176b557d27f8072f15f0964174eae1ef5"
+content-hash = "7068806ed5a30e10e6cd63657a17d25a8acc3f69243290e672baf904f0185078"
 
 [metadata.files]
 asgiref = []
@@ -208,6 +230,8 @@ django-bootstrap4 = []
 gunicorn = []
 heroku = []
 idna = []
+jinja2 = []
+markupsafe = []
 python-dateutil = []
 python-dotenv = []
 requests = []

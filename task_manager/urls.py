@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from task_manager import views
+from task_manager import views as tv
+from users import views as uv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', tv.Index.as_view()),
+    path('users/', uv.Users.as_view()),
+    path('users/create/', tv.Create.as_view()),
+    path('login/', tv.Login.as_view()),
 ]

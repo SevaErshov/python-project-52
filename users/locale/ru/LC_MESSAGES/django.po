@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 23:15+0300\n"
+"POT-Creation-Date: 2022-09-10 23:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,12 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-
 #: templates/main.html:12 templates/main.html:17
 msgid "TaskManager"
 msgstr "Менеджер задач"
 
-#: templates/main.html:21
+#: templates/main.html:21 views.py:7
 msgid "Users"
 msgstr "Пользователи"
 
@@ -36,17 +35,22 @@ msgstr "Вход"
 msgid "SignUp"
 msgstr "Регистрация"
 
-#~ msgid "UserName"
-#~ msgstr "Имя пользователя"
+#: views.py:8
+msgid "Name"
+msgstr "Полное имя"
 
-#~ msgid "Name"
-#~ msgstr "Полное имя"
+#: views.py:9
+msgid "Created"
+msgstr "Дата создания"
 
-#~ msgid "Created"
-#~ msgstr "Дата создания"
+#: views.py:10
+msgid "UserName"
+msgstr "Имя пользователя"
 
-#~ msgid "Edit"
-#~ msgstr "Редактировать"
+#: views.py:11
+msgid "Edit"
+msgstr "Изменить"
 
-#~ msgid "Delete"
-#~ msgstr "Удалить"
+#: views.py:12
+msgid "Delete"
+msgstr "Удалить"
