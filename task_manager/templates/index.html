@@ -9,15 +9,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Менеджер задач</title>
+    <title>{% trans "TaskManager" %}</title>
 </head>
 <body>
-    {% block content %}
-
-        {% bootstrap_button "Вход" %}
-        {% bootstrap_button "Регистрация" %}
-        {% bootstrap_button "Пользователи" %}
-
-    {% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">{% trans "TaskManager" %}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button" class="btn btn-link mr-auto">{{ Users }}</button>
+        <button type="button" class="btn my-2 my-sm-0 mr-2 btn-primary">{{ LogIn }}</button>
+        <button type="button" class="btn my-2 my-sm-0 btn-secondary">{{ SignUp }}</button>
+    </nav>
 </body>
 </html>
