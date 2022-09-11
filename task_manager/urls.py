@@ -21,7 +21,10 @@ from users import views as uv
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', tv.Index.as_view()),
+    path('login/', uv.Login.as_view()),
+]
+
+urlpatterns += [
     path('users/', uv.Users.as_view()),
-    path('users/create/', tv.Create.as_view()),
-    path('login/', tv.Login.as_view()),
+    path('users/create/', uv.Create.as_view()),
 ]

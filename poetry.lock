@@ -55,6 +55,17 @@ python-versions = ">=3.6.0"
 unicode_backport = ["unicodedata2"]
 
 [[package]]
+name = "dj-database-url"
+version = "1.0.0"
+description = "Use Database URLs in your Django Application."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Django = ">3.2"
+
+[[package]]
 name = "django"
 version = "4.1"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -217,7 +228,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "7068806ed5a30e10e6cd63657a17d25a8acc3f69243290e672baf904f0185078"
+content-hash = "6d1000eb1d1e48ab6bbeacac30571b4c2796569a1bf81b16dceb5db4041005e7"
 
 [metadata.files]
 asgiref = []
@@ -225,6 +236,7 @@ asgiref = []
 beautifulsoup4 = []
 certifi = []
 charset-normalizer = []
+dj-database-url = []
 django = []
 django-bootstrap4 = []
 gunicorn = []

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">{{ SignUp }}</h1>
+        <form>
+            <div class="form-group">
+                <label>{{ FirstName }}</label>
+                <input class="form-control" placeholder="Имя">
+            </div>
+            <div class="form-group">
+                <label>{{ LastName }}</label>
+                <input class="form-control" placeholder="Фамилия">
+            </div>
+            <div class="form-group">
+                <label>{{ UserName }}</label>
+                <input class="form-control" placeholder="Имя пользователя">
+                <small class="form-text text-muted">{{ ForUserName }}</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{ Password }}</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+                <ul>
+                    <li><small class="form-text text-muted">{{ ForPassword }}</small></li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{ Confirm }}</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Подтверждение пароля">
+                <small class="form-text text-muted">{{ ForConfirm }}</small>
+            </div>
+            <button type="submit" class="btn btn-primary">{{ Submit }}</button>
+        </form>
+    </div>
+{% endblock %}

@@ -8,15 +8,3 @@ class Index(View):
 
     def get(self, request):
         return render(request, 'index.html')
-
-
-class Login(View):
-
-    def get(self, request):
-        return render(request, 'login.html')
-
-
-class Create(View):
-
-    def get(self, request):
-        return render(request, 'create_user.html')
