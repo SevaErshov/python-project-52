@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from users.models import User
+from users.models import Users
 from django.utils.translation import gettext as _
 
 context = {
@@ -24,10 +24,10 @@ context = {
 }
 
 
-class Users(View):
+class UsersPage(View):
 
     def get(self, request):
-        users = User.objects.order_by('created_at')
+        users = Users.objects.order_by('created_at')
         context['users'] = users
         return render(request, 'users.html', context=context)
 

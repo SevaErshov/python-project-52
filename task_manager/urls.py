@@ -25,6 +25,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('users/', uv.Users.as_view()),
+    path('users/', uv.UsersPage.as_view()),
     path('users/create/', uv.Create.as_view()),
 ]
