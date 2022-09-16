@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views import View
-from users.models import Users
+from django.views.generic.edit import FormView
 from django.utils.translation import gettext as _
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 context = {
     'Users': _("Users"),
@@ -27,12 +29,14 @@ context = {
 class UsersPage(View):
 
     def get(self, request):
-        users = Users.objects.order_by('created_at')
+        users = User.objects.order_by('created_at')
         context['users'] = users
         return render(request, 'users.html', context=context)
 
 
-class Create(View):
+class Create(FormView):
+    form = UserCreationForm
+    success_url = '/login/'
 
     def get(self, request):
         return render(request, 'create_user.html', context=context)

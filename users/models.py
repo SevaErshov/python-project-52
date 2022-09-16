@@ -1,7 +1,5 @@
 from django.db import models
 
 
-class Users(models.Model):
-    username = models.CharField(max_length=100, unique=True)
-    name = models.CharField(max_length=100)
+class UserCreated(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
