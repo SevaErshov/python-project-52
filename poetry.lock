@@ -152,6 +152,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "psycopg2-binary"
+version = "2.9.3"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "python-dateutil"
 version = "1.5"
 description = "Extensions to the standard python 2.3+ datetime module"
@@ -228,7 +236,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "6d1000eb1d1e48ab6bbeacac30571b4c2796569a1bf81b16dceb5db4041005e7"
+content-hash = "15006d75c83b6fa8f0aa86365762e985c60aacac9f6566742cb3ff593d60cead"
 
 [metadata.files]
 asgiref = []
@@ -244,6 +252,7 @@ heroku = []
 idna = []
 jinja2 = []
 markupsafe = []
+psycopg2-binary = []
 python-dateutil = []
 python-dotenv = []
 requests = []
