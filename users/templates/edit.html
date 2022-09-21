@@ -1,4 +1,4 @@
-{% extends 'main.html' %}
+{% extends 'main_auth.html' %}
 {% load bootstrap4 %}
 
 {% bootstrap_css %}
@@ -6,10 +6,10 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="my-4">{{ LogIn }}</h1>
+        <h1 class="my-4">{{ SignUp }}</h1>
         <form method="post">{% csrf_token %}
             {% bootstrap_form form %}
-            <button type="submit" class="btn btn-primary">{{ Log_in }}</button>
+            <button type="submit" class="btn btn-primary">{{ Edit }}</button>
         </form>
     </div>
 {% endblock %}

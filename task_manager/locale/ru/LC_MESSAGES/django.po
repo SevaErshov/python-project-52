@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-10 23:15+0300\n"
+"POT-Creation-Date: 2022-09-19 11:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,21 +20,27 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: templates/main.html:12 templates/main.html:17
+#: task_manager/templates/main.html:12 task_manager/templates/main.html:17
+#: task_manager/templates/main_auth.html:12
+#: task_manager/templates/main_auth.html:17
 msgid "TaskManager"
 msgstr "Менеджер задач"
 
-#: templates/main.html:21
+#: task_manager/templates/main.html:21 task_manager/templates/main_auth.html:21
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/main.html:24
+#: task_manager/templates/main.html:24
 msgid "LogIn"
 msgstr "Вход"
 
-#: templates/main.html:25
+#: task_manager/templates/main.html:25
 msgid "SignUp"
 msgstr "Регистрация"
+
+#: task_manager/templates/main_auth.html:24
+msgid "LogOut"
+msgstr "Выход"
 
 #~ msgid "UserName"
 #~ msgstr "Имя пользователя"

@@ -22,9 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', tv.Index.as_view()),
     path('login/', uv.Login.as_view()),
+    path('logout/', uv.LogOut.as_view()),
 ]
 
 urlpatterns += [
     path('users/', uv.UsersPage.as_view()),
     path('users/create/', uv.Create.as_view()),
+    path('users/<int:pk>/update/', uv.EditUser.as_view(), name='users_upd'),
+    path('users/<int:pk>/delete/', uv.RemoveUser.as_view(), name='users_dlt')
 ]

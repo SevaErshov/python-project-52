@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-11 19:18+0300\n"
+"POT-Creation-Date: 2022-09-21 22:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,76 +20,80 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: templates/main.html:12 templates/main.html:17
+#: users/templates/main.html:12 users/templates/main.html:17
+#: users/templates/main_auth.html:12 users/templates/main_auth.html:17
 msgid "TaskManager"
 msgstr "Менеджер задач"
 
-#: templates/main.html:21 views.py:7
+#: users/templates/main.html:21 users/templates/main_auth.html:21
+#: users/views.py:14
 msgid "Users"
 msgstr "Пользователи"
 
-#: templates/main.html:24
+#: users/templates/main.html:24 users/views.py:27
 msgid "LogIn"
 msgstr "Вход"
 
-#: templates/main.html:25 views.py:21
+#: users/templates/main.html:25 users/views.py:25
 msgid "SignUp"
 msgstr "Регистрация"
 
-#: views.py:8
+#: users/templates/main_auth.html:24 users/views.py:28
+msgid "LogOut"
+msgstr "Выход"
+
+#: users/views.py:15
 msgid "Name"
 msgstr "Полное имя"
 
-#: views.py:9
+#: users/views.py:16
 msgid "Created"
 msgstr "Дата создания"
 
-#: views.py:10
+#: users/views.py:17
 msgid "UserName"
 msgstr "Имя пользователя"
 
-#: views.py:11
+#: users/views.py:18 users/views.py:29
 msgid "Edit"
 msgstr "Изменить"
 
-#: views.py:12
+#: users/views.py:19
 msgid "Delete"
 msgstr "Удалить"
 
-#: views.py:13
+#: users/views.py:20
 msgid "FirstName"
 msgstr "Имя"
 
-#: views.py:14
+#: users/views.py:21
 msgid "LastName"
 msgstr "Фамилия"
 
-#: views.py:15
-msgid "ForPassword"
-msgstr "Ваш пароль должен содержать как минимум 3 символа."
-
-#: views.py:16
-msgid "ForConfirm"
-msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
-
-#: views.py:17
+#: users/views.py:22
 msgid "Confirm"
 msgstr "Подтверждение пароля"
 
-#: views.py:18
+#: users/views.py:23
 msgid "Password"
 msgstr "Пароль"
 
-#: views.py:19
-msgid "ForUserName"
-msgstr ""
-"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
-"+/-/_."
-
-#: views.py:20
+#: users/views.py:24
 msgid "Submit"
 msgstr "Зарегистрировать"
 
-#: views.py:22
+#: users/views.py:26
 msgid "Log_in"
 msgstr "Войти"
+
+#: users/views.py:30
+msgid "DeleteUser"
+msgstr "Удаление пользователя"
+
+#: users/views.py:31
+msgid "ConfirmDelete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: users/views.py:32
+msgid "ConfirmDeleteButton"
+msgstr "Да, удалить"

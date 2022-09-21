@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.utils.translation import gettext as _
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from users.forms import RegisterForm, LoginForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 context = {
     'Users': _("Users"),
@@ -14,35 +19,118 @@ context = {
     'Delete': _("Delete"),
     'FirstName': _("FirstName"),
     'LastName': _("LastName"),
-    'ForPassword': _("ForPassword"),
-    'ForConfirm': _("ForConfirm"),
     'Confirm': _("Confirm"),
     'Password': _("Password"),
-    'ForUserName': _("ForUserName"),
     'Submit': _("Submit"),
     'SignUp': _("SignUp"),
     'Log_in': _("Log_in"),
     'LogIn': _("LogIn"),
+    'LogOut': _("LogOut"),
+    'Edit': _("Edit"),
+    'DeleteUser': _("DeleteUser"),
+    'ConfirmDelete': _("ConfirmDelete"),
+    'ConfirmDeleteButton': _("ConfirmDeleteButton"),
 }
 
 
 class UsersPage(View):
 
     def get(self, request):
-        users = User.objects.order_by('created_at')
+        if request.user.is_authenticated:
+            template = 'users_a.html'
+        else:
+            template = 'users.html'
+        users = User.objects.all()
         context['users'] = users
-        return render(request, 'users.html', context=context)
+        return render(request, template, context=context)
+
 
 
 class Create(FormView):
-    form = UserCreationForm
-    success_url = '/login/'
+    def post(self, request):
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  
+            user.save()
+            messages.success(request, "Поздравляем! Профиль создан.")
+            return redirect('/login/')
+        context['form'] = form
+        return render(request, 'create_user.html', context=context)
 
     def get(self, request):
-        return render(request, 'create_user.html', context=context)
+        if request.user.is_authenticated:
+            template = 'create_user_a.html'
+        else:
+            template = 'create_user.html'
+        form = RegisterForm()
+        context['form'] = form
+        return render(request, template, context=context)
 
 
 class Login(View):
+    def post(self, request):
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Вы успешно вошли в профиль!')
+            return redirect('/')
+        else:
+            messages.error(request, "Такого профиля не существует :(")
+        return render(request, 'login.html', context=context)
 
     def get(self, request):
-        return render(request, 'login.html', context=context)
+        if request.user.is_authenticated:
+            template = 'login_a.html'
+        else:
+            template = 'login.html'
+        form = LoginForm()
+        context['form'] = form
+        return render(request, template, context=context)
+
+
+class LogOut(View):
+    def post(self, request):
+        logout(request)
+        messages.success(request, 'Вы успешно вышли из профиля. Ждём вас снова!')
+        return redirect('/')
+
+
+class EditUser(SuccessMessageMixin, UpdateView):
+    model = User
+    form_class = RegisterForm
+    template_name = 'edit.html'
+
+    success_url = ('/users/')
+    success_message = 'Вы успешно отредактировали пользователя!'
+
+    def get(self, request, pk):
+        if not request.user.is_authenticated:
+            messages.error(request, 'Вы не авторизованы. Пожалуйста, выполните вход.')
+            return redirect('/login/')
+        if not request.user.id == pk:
+            messages.error(request, 'У вас нет прав для редактирования других пользователей.')
+            return redirect('/users/')
+        context['form'] = RegisterForm()
+        return render(request, self.template_name, context=context)
+
+
+class RemoveUser(SuccessMessageMixin, DeleteView):
+    model = User
+    template_name = 'delete.html'
+
+    success_url = ('/users/')
+    success_message = 'Пользователь успешно удалён.'
+
+    def get(self, request, pk):
+        if not request.user.is_authenticated:
+            messages.error(request, 'Вы не авторизованы. Пожалуйста, выполните вход.')
+            return redirect('/login/')
+        if not request.user.id == pk:
+            messages.error(request, 'У вас нет прав для редактирования других пользователей.')
+            return redirect('/users/')
+        context['user'] = request.user
+        return render(request, self.template_name, context=context)
+

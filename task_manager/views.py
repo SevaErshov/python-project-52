@@ -7,4 +7,7 @@ from django.views import View
 class Index(View):
 
     def get(self, request):
-        return render(request, 'index.html')
+        if request.user.is_authenticated:
+            return render(request, 'index_a.html')
+        else:
+            return render(request, 'index.html')
