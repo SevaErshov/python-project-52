@@ -2,8 +2,8 @@ runserver:
 	poetry run python3 manage.py runserver
 
 migrations: #migrate and migrations
-	poetry run python3 manage.py makemigrations
-	poetry run python3 manage.py migrate
+	poetry run python manage.py makemigrations
+	poetry run python manage.py migrate
 
 dj_shell:
 	poetry run python manage.py shell
