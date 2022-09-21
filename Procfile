@@ -1,2 +1,3 @@
 web: gunicorn task_manager.wsgi --log-file -
-release: make migrations
+release: python manage.py makemigrations
+python manage.py migrate
