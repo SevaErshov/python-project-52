@@ -20,46 +20,62 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/templates/main.html:12 task_manager/templates/main.html:17
-#: task_manager/templates/main_auth.html:12
-#: task_manager/templates/main_auth.html:17
+#: statuses/models.py:6 statuses/templates/statuses.html:15
+msgid "JustName"
+msgstr "Имя"
+
+#: statuses/templates/main_auth.html:12 statuses/templates/main_auth.html:17
 msgid "TaskManager"
-msgstr "Менеджер задач"
-
-#: task_manager/templates/main.html:21 task_manager/templates/main_auth.html:22
-msgid "Users"
-msgstr "Пользователи"
-
-#: task_manager/templates/main.html:24
-msgid "LogIn"
-msgstr "Вход"
-
-#: task_manager/templates/main.html:25
-msgid "SignUp"
-msgstr "Регистрация"
-
-#: task_manager/templates/main_auth.html:23
-msgid "Statuses"
 msgstr ""
 
-#: task_manager/templates/main_auth.html:27
+#: statuses/templates/main_auth.html:22
+msgid "Users"
+msgstr ""
+
+#: statuses/templates/main_auth.html:23 statuses/templates/statuses.html:10
+msgid "Statuses"
+msgstr "Статусы"
+
+#: statuses/templates/main_auth.html:27
 msgid "LogOut"
-msgstr "Выход"
+msgstr ""
 
-#~ msgid "UserName"
-#~ msgstr "Имя пользователя"
+#: statuses/templates/statuse_create.html:10
+#: statuses/templates/statuses.html:20
+msgid "CreateStatus"
+msgstr "Создать статус"
 
-#~ msgid "Name"
-#~ msgstr "Полное имя"
+#: statuses/templates/statuse_create.html:13
+msgid "Create"
+msgstr "Создать"
 
-#~ msgid "Created"
-#~ msgstr "Дата создания"
+#: statuses/templates/statuse_delete.html:10
+msgid "DeleteStatus"
+msgstr "Удаление статуса"
 
-#~ msgid "Edit"
-#~ msgstr "Редактировать"
+#: statuses/templates/statuse_delete.html:11
+msgid "ConfirmDelete"
+msgstr ""
 
-#~ msgid "Delete"
-#~ msgstr "Удалить"
+#: statuses/templates/statuse_delete.html:13
+msgid "ConfirmDeleteButton"
+msgstr ""
+
+#: statuses/templates/statuse_edit.html:10
+msgid "EditStatus"
+msgstr "Изменение статуса"
+
+#: statuses/templates/statuse_edit.html:13 statuses/templates/statuses.html:30
+msgid "Edit"
+msgstr ""
+
+#: statuses/templates/statuses.html:16
+msgid "Created"
+msgstr ""
+
+#: statuses/templates/statuses.html:33
+msgid "Delete"
+msgstr ""
 
 #~ msgid "Tasks"
 #~ msgstr "Задачи"

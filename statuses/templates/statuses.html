@@ -1,0 +1,42 @@
+{% extends 'main_auth.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">{% trans "Statuses" %}</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">{% trans "JustName" %}</th>
+                <th scope="col">{% trans "Created" %}</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <a type="button" class="btn btn-link" href="/statuses/create">{% trans "CreateStatus" %}</a>
+            <tbody>
+                {% for status in statuses %}
+                <tr>
+                    <th>{{status.id}}</th>
+                    <td>{{status.name}}</td>
+                    <td>{{status.date_created}}</td>
+                    <td>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="{% url 'statuses_upd' status.id %}">{% trans "Edit" %}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'statuses_dlt' status.id %}">{% trans "Delete" %}</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

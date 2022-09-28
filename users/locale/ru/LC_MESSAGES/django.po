@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 22:13+0300\n"
+"POT-Creation-Date: 2022-09-27 22:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,12 +20,24 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
+#: users/templates/delete.html:10 users/views.py:30
+msgid "DeleteUser"
+msgstr "Удаление пользователя"
+
+#: users/templates/delete.html:11 users/views.py:31
+msgid "ConfirmDelete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: users/templates/delete.html:13 users/views.py:32
+msgid "ConfirmDeleteButton"
+msgstr "Да, удалить"
+
 #: users/templates/main.html:12 users/templates/main.html:17
 #: users/templates/main_auth.html:12 users/templates/main_auth.html:17
 msgid "TaskManager"
 msgstr "Менеджер задач"
 
-#: users/templates/main.html:21 users/templates/main_auth.html:21
+#: users/templates/main.html:21 users/templates/main_auth.html:22
 #: users/views.py:14
 msgid "Users"
 msgstr "Пользователи"
@@ -38,7 +50,11 @@ msgstr "Вход"
 msgid "SignUp"
 msgstr "Регистрация"
 
-#: users/templates/main_auth.html:24 users/views.py:28
+#: users/templates/main_auth.html:23 users/views.py:33
+msgid "Statuses"
+msgstr ""
+
+#: users/templates/main_auth.html:27 users/views.py:28
 msgid "LogOut"
 msgstr "Выход"
 
@@ -54,7 +70,7 @@ msgstr "Дата создания"
 msgid "UserName"
 msgstr "Имя пользователя"
 
-#: users/views.py:18 users/views.py:29
+#: users/views.py:18
 msgid "Edit"
 msgstr "Изменить"
 
@@ -86,14 +102,30 @@ msgstr "Зарегистрировать"
 msgid "Log_in"
 msgstr "Войти"
 
-#: users/views.py:30
-msgid "DeleteUser"
-msgstr "Удаление пользователя"
+#: users/views.py:29
+msgid "EditUser"
+msgstr "Изменение пользователя"
 
-#: users/views.py:31
-msgid "ConfirmDelete"
-msgstr "Вы уверены, что хотите удалить"
+#~ msgid "Tasks"
+#~ msgstr "Задачи"
 
-#: users/views.py:32
-msgid "ConfirmDeleteButton"
-msgstr "Да, удалить"
+#~ msgid "CreateTask"
+#~ msgstr "Создать задачу"
+
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#~ msgid "Executor"
+#~ msgstr "Исполнитель"
+
+#~ msgid "OnlyYours"
+#~ msgstr "Только свои задачи"
+
+#~ msgid "Show"
+#~ msgstr "Показать"
+
+#~ msgid "Author"
+#~ msgstr "Автор"
+
+#~ msgid "Def"
+#~ msgstr "Описание"

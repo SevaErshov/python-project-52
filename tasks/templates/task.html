@@ -1,0 +1,39 @@
+{% extends 'main_auth.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">{% trans "ShowTask" %}</h1>
+        <div class="card">
+            <h3 class="card-header text-white bg-secondary">{{task.name}}</h3>
+            <div class="card-body bg-light">
+                <p>{{task.description}}</p>
+                <hr>
+                <dl class="row">
+                    <dt class="col-sm-8">{% trans "Author" %}</dt>
+                    <dd class="col-sm-4">{{task.author}}</dd>
+
+                    <dt class="col-sm-8">{% trans "Executor" %}</dt>
+                    <dd class="col-sm-4">{{task.executor}}</dd>
+
+                    <dt class="col-sm-8">{% trans "Status" %}</dt>
+                    <dd class="col-sm-4">{{task.status}}</dd>
+
+                    <dt class="col-sm-8">{% trans "Created" %}</dt>
+                    <dd class="col-sm-4">{{task.date_created}}</dd>
+                </dl>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{% url 'tasks_upd' task.id %}">{% trans "Edit" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'tasks_dlt' task.id %}">{% trans "Delete" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

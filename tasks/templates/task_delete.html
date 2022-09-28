@@ -7,8 +7,8 @@
 
 {% block content %}
     <div class="container">
-        <h1 class="my-4">{% trans "DeleteUser" %}</h1>
-        <p>{% trans "ConfirmDelete" %} {{ user.first_name }} {{ user.last_name }}?</p>
+        <h1 class="my-4">{% trans "DeleteTask" %}</h1>
+        <p>{% trans "ConfirmDelete" %} {{ task.name }}?</p>
         <form method="post">{% csrf_token %}
             <button type="submit" class="btn btn-danger">{% trans "ConfirmDeleteButton" %}</button>
         </form>

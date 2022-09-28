@@ -26,10 +26,11 @@ context = {
     'Log_in': _("Log_in"),
     'LogIn': _("LogIn"),
     'LogOut': _("LogOut"),
-    'Edit': _("Edit"),
+    'EditUser': _("EditUser"),
     'DeleteUser': _("DeleteUser"),
     'ConfirmDelete': _("ConfirmDelete"),
     'ConfirmDeleteButton': _("ConfirmDeleteButton"),
+    'Statuses': _("Statuses"),
 }
 
 
@@ -59,10 +60,7 @@ class Create(FormView):
         return render(request, 'create_user.html', context=context)
 
     def get(self, request):
-        if request.user.is_authenticated:
-            template = 'create_user_a.html'
-        else:
-            template = 'create_user.html'
+        template = 'create_user.html'
         form = RegisterForm()
         context['form'] = form
         return render(request, template, context=context)

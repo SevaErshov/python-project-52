@@ -1,7 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
 from django.contrib.auth.models import User
 import django.forms as forms
-from django.utils.translation import gettext as _
 
 
 class RegisterForm(UserCreationForm):

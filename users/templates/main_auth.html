@@ -18,7 +18,11 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a type="button" class="btn btn-link mr-auto" href="/users/">{% trans "Users" %}</a>
+        <div class="btn-group" role="group" aria-label="Basic example"></div>
+            <a type="button" class="btn btn-link" href="/users/">{% trans "Users" %}</a>
+            <a type="button" class="btn btn-link" href="/statuses/">{% trans "Statuses" %}</a>
+            <a type="button" class="btn btn-link mr-auto" href="/tasks/">{% trans "Tasks" %}</a>
+        </div>
         <ul class="navbar-nav">
             <form method="post" action="/logout/">{% csrf_token %}
                 <button type="submit" class="btn btn-primary" href="/logout/">{% trans "LogOut" %}</button>
