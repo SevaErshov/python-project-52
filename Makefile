@@ -10,3 +10,6 @@ dj_shell:
 
 test:
 	poetry run python3 manage.py test
+
+dependencies:
+	poetry install
