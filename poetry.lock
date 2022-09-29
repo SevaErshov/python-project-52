@@ -56,14 +56,11 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "dj-database-url"
-version = "1.0.0"
+version = "0.5.0"
 description = "Use Database URLs in your Django Application."
 category = "main"
 optional = false
 python-versions = "*"
-
-[package.dependencies]
-Django = ">3.2"
 
 [[package]]
 name = "django"
@@ -304,7 +301,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ab9729cc11b65a6202b0d9bb93dc80368302c47b6fa976da03b82f8604d0a95d"
+content-hash = "fbba3bc548ee6f705d4a8a24236c9caaef6b68617fcde9783142a1839fbc7757"
 
 [metadata.files]
 asgiref = []
