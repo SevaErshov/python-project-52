@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 22:22+0300\n"
+"POT-Creation-Date: 2022-09-28 12:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,15 @@ msgstr ""
 msgid "Statuses"
 msgstr "Статусы"
 
-#: statuses/templates/main_auth.html:27
+#: statuses/templates/main_auth.html:24
+msgid "Labels"
+msgstr ""
+
+#: statuses/templates/main_auth.html:25
+msgid "Tasks"
+msgstr "Задачи"
+
+#: statuses/templates/main_auth.html:29
 msgid "LogOut"
 msgstr ""
 
@@ -76,9 +84,6 @@ msgstr ""
 #: statuses/templates/statuses.html:33
 msgid "Delete"
 msgstr ""
-
-#~ msgid "Tasks"
-#~ msgstr "Задачи"
 
 #~ msgid "CreateTask"
 #~ msgstr "Создать задачу"

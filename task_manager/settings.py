@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
+import rollbar
+
 
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,6 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
+ROLLBAR_TOKEN = os.getenv('ROLLBAR_TOKEN')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -47,6 +50,8 @@ INSTALLED_APPS = [
     'users',
     'statuses',
     'tasks',
+    'labels',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +62,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
 ]
+
+ROLLBAR = {
+    'access_token': ROLLBAR_TOKEN,
+    'environment': 'production',
+    'root': BASE_DIR,
+}
+rollbar.init(**ROLLBAR)
 
 ROOT_URLCONF = 'task_manager.urls'
 

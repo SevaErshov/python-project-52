@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-28 12:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: labels/templates/templates/label_create.html:10
+#: labels/templates/templates/labels.html:20
+msgid "CreateStatus"
+msgstr ""
+
+#: labels/templates/templates/label_create.html:13
+msgid "Create"
+msgstr ""
+
+#: labels/templates/templates/label_delete.html:10
+msgid "DeleteStatus"
+msgstr ""
+
+#: labels/templates/templates/label_delete.html:11
+msgid "ConfirmDelete"
+msgstr ""
+
+#: labels/templates/templates/label_delete.html:13
+msgid "ConfirmDeleteButton"
+msgstr ""
+
+#: labels/templates/templates/label_edit.html:10
+msgid "EditStatus"
+msgstr ""
+
+#: labels/templates/templates/label_edit.html:13
+#: labels/templates/templates/labels.html:30
+msgid "Edit"
+msgstr ""
+
+#: labels/templates/templates/labels.html:10
+#: labels/templates/templates/main_auth.html:23
+msgid "Statuses"
+msgstr ""
+
+#: labels/templates/templates/labels.html:15
+msgid "JustName"
+msgstr ""
+
+#: labels/templates/templates/labels.html:16
+msgid "Created"
+msgstr ""
+
+#: labels/templates/templates/labels.html:33
+msgid "Delete"
+msgstr ""
+
+#: labels/templates/templates/main_auth.html:12
+#: labels/templates/templates/main_auth.html:17
+msgid "TaskManager"
+msgstr ""
+
+#: labels/templates/templates/main_auth.html:22
+msgid "Users"
+msgstr ""
+
+#: labels/templates/templates/main_auth.html:24
+msgid "Labels"
+msgstr "Метки"
+
+#: labels/templates/templates/main_auth.html:25
+msgid "Tasks"
+msgstr ""
+
+#: labels/templates/templates/main_auth.html:29
+msgid "LogOut"
+msgstr ""
+
+msgid "CreateLabel"
+msgstr "Создать метку"
+
+msgid "DeleteLabel"
+msgstr "Удаление метки"
+
+msgid "EditLabel"
+msgstr "Изменение метки"

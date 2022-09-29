@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 class TestTask(TestCase):
-    fixtures = ['fixture_data.json']
+    fixtures = ['new_fixture.json']
 
     def setUp(self):
         self.client = Client()
@@ -22,13 +22,14 @@ class TestTask(TestCase):
         response = self.client.post("/tasks/create/", data={
             'name': 'anyname',
             'description': 'anydesc',
-            'status': 8,
-            'executor': 2
+            'status': 12,
+            'executor': 9,
+            'labels': 2,
         })
         tasks = Task.objects.all()
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(tasks.count(), 3)
+        self.assertEqual(tasks.count(), 5)
 
     def test_update(self):
         tasks = Task.objects.all()
@@ -36,8 +37,9 @@ class TestTask(TestCase):
         self.client.post('/tasks/3/update/', data={
             'name': 'newname',
             'description': 'anydesc',
-            'status': 8,
-            'executor': 2,
+            'status': 12,
+            'executor': 9,
+            'labels': 3
         })
 
         self.assertEqual(success_response.status_code, 200)
@@ -51,4 +53,4 @@ class TestTask(TestCase):
 
         self.assertEqual(success_response.status_code, 302)
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(tasks.count(), 2)
+        self.assertEqual(tasks.count(), 4)

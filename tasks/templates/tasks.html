@@ -21,8 +21,17 @@
             </tr>
             </thead>
             <a type="button" class="btn btn-link" href="/tasks/create">{% trans "CreateTask" %}</a>
+            <div class="card">
+                <div class="card-body bg-light">
+                    <form method="get">
+                        {% bootstrap_form filter.form layout='horizontal' bound_css_class='' %}
+                        <button type="submit" class="btn btn-primary">{% trans "Show" %}</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
             <tbody>
-                {% for task in tasks %}
+                {% for task in filter.qs %}
                 <tr>
                     <th>{{task.id}}</th>
                     <td><a href="{% url 'tasks_get' task.id %}">{{task.name}}</a></td>

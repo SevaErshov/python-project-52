@@ -1,22 +1,22 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.utils.translation import gettext as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from tasks.models import Task
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.models import User
 from django.contrib import messages
-from tasks.forms import CreationTaskForm
+from tasks.forms import CreationTaskForm, TaskFilter
+from django_filters.views import FilterView
 
 
 
-class TasksList(View, LoginRequiredMixin):
+
+class TasksList(FilterView, LoginRequiredMixin):
     login_url = '/login/'
-
-    def get(self, request):
-        tasks = Task.objects.all()
-        return render(request, 'tasks.html', context={'tasks': tasks})
+    filterset_class = TaskFilter
+    template_name = 'tasks.html'
+    model = Task
 
 
 class CreateTask(SuccessMessageMixin, CreateView, LoginRequiredMixin):
@@ -44,7 +44,7 @@ class EditTask(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
     template_name = 'task_edit.html'
 
     model = Task
-    fields = ['name', 'description', 'status', 'executor']
+    fields = ['name', 'description', 'status', 'executor', 'labels']
     success_url = '/tasks/'
     success_message = 'Задача успешно изменена.'
 
@@ -71,4 +71,4 @@ class TaskPage(View, LoginRequiredMixin):
 
     def get(self, request, pk):
         task = Task.objects.get(id=pk)
-        return render(request, 'task.html', context={'task': task})
+        return render(request, 'task.html', context={'task': task, 'labels': task.labels.all()})

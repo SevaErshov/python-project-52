@@ -4,8 +4,7 @@ from django.views import View
 from django.utils.translation import gettext as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from statuses.models import Status
-from django.views.generic.edit import FormView, UpdateView, DeleteView, CreateView
-from statuses.forms import CreationStatusForm
+from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 from tasks.models import Task
 
@@ -19,7 +18,7 @@ class StatusesList(View, LoginRequiredMixin):
         return render(request, 'statuses.html', context={'statuses': statuses})
 
 
-class StatuseCreate( SuccessMessageMixin, CreateView, LoginRequiredMixin):
+class StatuseCreate(SuccessMessageMixin, CreateView, LoginRequiredMixin):
     login_url = '/login/'
     template_name = 'statuse_create.html'
 

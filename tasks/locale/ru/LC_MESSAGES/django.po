@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-27 22:22+0300\n"
+"POT-Creation-Date: 2022-09-28 12:42+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,30 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: tasks/models.py:9 tasks/templates/tasks.html:15
+msgid "JustName"
+msgstr ""
+
+#: tasks/models.py:10
+msgid "Def"
+msgstr "Описание"
+
+#: tasks/models.py:11 tasks/templates/task.html:22
+#: tasks/templates/tasks.html:16
+msgid "Status"
+msgstr "Статус"
+
+#: tasks/models.py:12 tasks/templates/task.html:16
+#: tasks/templates/tasks.html:17
+msgid "Author"
+msgstr "Автор"
+
+#: tasks/models.py:13 tasks/templates/task.html:19
+#: tasks/templates/tasks.html:18
+msgid "Executor"
+msgstr "Исполнитель"
+
 #: tasks/templates/main_auth.html:12 tasks/templates/main_auth.html:17
 msgid "TaskManager"
 msgstr ""
@@ -27,65 +51,62 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: tasks/templates/main_auth.html:23 tasks/templates/tasks.html:10
+#: tasks/templates/main_auth.html:23
 msgid "Statuses"
 msgstr ""
 
-#: tasks/templates/main_auth.html:27
-msgid "LogOut"
+#: tasks/templates/main_auth.html:24
+msgid "Labels"
 msgstr ""
 
-#: tasks/templates/statuse_create.html:10 tasks/templates/tasks.html:20
-msgid "CreateStatus"
-msgstr ""
-
-#: tasks/templates/statuse_create.html:13
-msgid "Create"
-msgstr ""
-
-#: tasks/templates/statuse_delete.html:10
-msgid "DeleteStatus"
-msgstr ""
-
-#: tasks/templates/statuse_delete.html:11
-msgid "ConfirmDelete"
-msgstr ""
-
-#: tasks/templates/statuse_delete.html:13
-msgid "ConfirmDeleteButton"
-msgstr ""
-
-#: tasks/templates/statuse_edit.html:10
-msgid "EditStatus"
-msgstr ""
-
-#: tasks/templates/statuse_edit.html:13 tasks/templates/tasks.html:30
-msgid "Edit"
-msgstr ""
-
-#: tasks/templates/tasks.html:15
-msgid "JustName"
-msgstr ""
-
-#: tasks/templates/tasks.html:16
-msgid "Created"
-msgstr ""
-
-#: tasks/templates/tasks.html:33
-msgid "Delete"
-msgstr ""
-
+#: tasks/templates/main_auth.html:25 tasks/templates/tasks.html:10
 msgid "Tasks"
 msgstr "Задачи"
 
+#: tasks/templates/main_auth.html:29
+msgid "LogOut"
+msgstr ""
+
+#: tasks/templates/task.html:9
+msgid "ShowTask"
+msgstr "Просмотр задачи"
+
+#: tasks/templates/task.html:25 tasks/templates/tasks.html:19
+msgid "Created"
+msgstr ""
+
+#: tasks/templates/task.html:30 tasks/templates/task_edit.html:13
+#: tasks/templates/tasks.html:36
+msgid "Edit"
+msgstr ""
+
+#: tasks/templates/task.html:33 tasks/templates/tasks.html:39
+msgid "Delete"
+msgstr ""
+
+#: tasks/templates/task_create.html:10 tasks/templates/tasks.html:23
 msgid "CreateTask"
 msgstr "Создать задачу"
 
-msgid "Status"
-msgstr "Статус"
+#: tasks/templates/task_create.html:13
+msgid "Create"
+msgstr ""
 
-msgid "Executor"
-msgstr "Исполнитель"
+#: tasks/templates/task_delete.html:10
+msgid "DeleteTask"
+msgstr "Удалить задачу"
+
+#: tasks/templates/task_delete.html:11
+msgid "ConfirmDelete"
+msgstr ""
+
+#: tasks/templates/task_delete.html:13
+msgid "ConfirmDeleteButton"
+msgstr ""
+
+#: tasks/templates/task_edit.html:10
+msgid "EditTask"
+msgstr "Изменить задачу"
 
 msgid "OnlyYours"
 msgstr "Только свои задачи"
@@ -93,17 +114,5 @@ msgstr "Только свои задачи"
 msgid "Show"
 msgstr "Показать"
 
-msgid "Author"
-msgstr "Автор"
-
-msgid "Def"
-msgstr "Описание"
-
-msgid "EditTask"
-msgstr "Изменить задачу"
-
-msgid "DeleteTask"
-msgstr "Удалить задачу"
-
-msgid "ShowTask"
-msgstr "Просмотр задачи"
+msgid "Label"
+msgstr "Метка"

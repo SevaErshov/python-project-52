@@ -1,0 +1,16 @@
+{% extends 'main_auth.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">{% trans "CreateLabel" %}</h1>
+        <form method="post">{% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-primary">{% trans "Create" %}</button>
+        </form>
+    </div>
+{% endblock %}

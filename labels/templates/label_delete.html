@@ -1,0 +1,16 @@
+{% extends 'main_auth.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">{% trans "DeleteLabel" %}</h1>
+        <p>{% trans "ConfirmDelete" %} {{ label.name }}?</p>
+        <form method="post">{% csrf_token %}
+            <button type="submit" class="btn btn-danger">{% trans "ConfirmDeleteButton" %}</button>
+        </form>
+    </div>
+{% endblock %}

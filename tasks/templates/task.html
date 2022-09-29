@@ -14,16 +14,26 @@
                 <hr>
                 <dl class="row">
                     <dt class="col-sm-8">{% trans "Author" %}</dt>
-                    <dd class="col-sm-4">{{task.author}}</dd>
+                    <dd class="col-sm-4">{{task.author.first_name}} {{task.author.last_name}}</dd>
 
                     <dt class="col-sm-8">{% trans "Executor" %}</dt>
-                    <dd class="col-sm-4">{{task.executor}}</dd>
+                    <dd class="col-sm-4">{{task.executor.first_name}} {{task.executor.last_name}}</dd>
 
                     <dt class="col-sm-8">{% trans "Status" %}</dt>
                     <dd class="col-sm-4">{{task.status}}</dd>
 
                     <dt class="col-sm-8">{% trans "Created" %}</dt>
                     <dd class="col-sm-4">{{task.date_created}}</dd>
+
+                    <dt class="col-sm-8">{% trans "Labels" %}:</dt>
+                    <dd class="col-sm-4"></dd>
+                    <dd>
+                        <ul>
+                            {% for label in labels %}
+                                <li>{{label}}</li>
+                            {% endfor %}
+                        </ul>
+                    </dd>
                 </dl>
                 <ul class="navbar-nav">
                     <li class="nav-item">
