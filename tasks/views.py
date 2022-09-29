@@ -29,7 +29,7 @@ class CreateTask(SuccessMessageMixin, CreateView, LoginRequiredMixin):
             task = form.save()
             task.author = User.objects.get(id=request.user.id)
             task.save()
-            messages.success(request, "Задача успешно создана.")
+            messages.success(request, "Задача успешно создана")
             return redirect('/tasks/')
         return render(request, 'task_create.html', context={'form': form})
 
@@ -46,7 +46,7 @@ class EditTask(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
     model = Task
     fields = ['name', 'description', 'status', 'executor', 'labels']
     success_url = '/tasks/'
-    success_message = 'Задача успешно изменена.'
+    success_message = 'Задача успешно изменена'
 
 
 class RemoveTask(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
@@ -56,12 +56,12 @@ class RemoveTask(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     model = Task
     fields = ['name']
     success_url = '/tasks/'
-    success_message = 'Задача успешно удалена.'
+    success_message = 'Задача успешно удалена'
 
     def get(self, request, pk):
         task = Task.objects.get(id=pk)
         if not request.user.id == task.author.id:
-            messages.error(request, 'У вас нет прав для удаления не своих задач.')
+            messages.error(request, 'Задачу может удалить только её автор')
             return redirect('/tasks/')
         return render(request, self.template_name, context={'task': task})
 

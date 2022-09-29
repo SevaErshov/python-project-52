@@ -25,7 +25,7 @@ class LabelCreate(SuccessMessageMixin, CreateView, LoginRequiredMixin):
     model = Label
     fields = ['name']
     success_url = '/labels/'
-    success_message = 'Метка успешно создана.'
+    success_message = 'Метка успешно создана'
 
 
 class LabelUpdate(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
@@ -35,7 +35,7 @@ class LabelUpdate(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
     model = Label
     fields = ['name']
     success_url = '/labels/'
-    success_message = 'Метка успешно изменена.'
+    success_message = 'Метка успешно изменена'
 
 
 class LabelDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
@@ -45,11 +45,11 @@ class LabelDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     model = Label
     fields = ['name']
     success_url = '/labels/'
-    success_message = 'Метка успешно удалена.'
+    success_message = 'Метка успешно удалена'
     
     def get(self, request, pk):
         related_task = Task.objects.filter(labels=pk)
         if bool(related_task) is True:
-            messages.error(request, "Вы не можете удалить метку, так как она связана с задачей.")
+            messages.error(request, "Невозможно удалить метку, потому что она используется")
             return redirect('/labels/')
         return render(request, "label_delete.html", context={'label': Label.objects.get(id=pk)})

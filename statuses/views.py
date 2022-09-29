@@ -25,7 +25,7 @@ class StatuseCreate(SuccessMessageMixin, CreateView, LoginRequiredMixin):
     model = Status
     fields = ['name']
     success_url = '/statuses/'
-    success_message = 'Статус успешно создан.'
+    success_message = 'Статус успешно создан'
 
 
 class StatuseUpdate(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
@@ -35,7 +35,7 @@ class StatuseUpdate(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
     model = Status
     fields = ['name']
     success_url = '/statuses/'
-    success_message = 'Статус успешно изменен.'
+    success_message = 'Статус успешно изменён'
 
 
 class StatuseDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
@@ -45,11 +45,12 @@ class StatuseDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     model = Status
     fields = ['name']
     success_url = '/statuses/'
-    success_message = 'Статус успешно удалён.'
+    success_message = 'Статус успешно удалён'
     
     def get(self, request, pk):
         related_task = Task.objects.filter(status=pk)
         if bool(related_task) is True:
-            messages.error(request, "Вы не можете удалить статус, так как он связан с задачей.")
+            messages.error(request, "Невозможно удалить статус, потому что он используется")
             return redirect('/statuses/')
         return render(request, "statuse_delete.html", context={'status': Status.objects.get(id=pk)})
+        
