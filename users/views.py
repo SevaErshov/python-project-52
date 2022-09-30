@@ -96,7 +96,7 @@ class LogOut(View):
         return redirect('/')
 
 
-class EditUser(UpdateView, SuccessMessageMixin):
+class EditUser(SuccessMessageMixin, UpdateView):
     template_name = 'edit.html'
 
     model = User
