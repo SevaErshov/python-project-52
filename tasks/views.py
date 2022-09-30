@@ -44,7 +44,7 @@ class EditTask(SuccessMessageMixin, UpdateView, LoginRequiredMixin):
     template_name = 'task_edit.html'
 
     model = Task
-    fields = ['name', 'description', 'status', 'executor', 'labels']
+    form_class = CreationTaskForm
     success_url = '/tasks/'
     success_message = 'Задача успешно изменена'
 
