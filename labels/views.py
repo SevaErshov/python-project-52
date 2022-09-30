@@ -48,8 +48,12 @@ class LabelDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     success_message = 'Метка успешно удалена'
     
     def get(self, request, pk):
+        return render(request, "label_delete.html", context={'label': Label.objects.get(id=pk)})
+
+    def post(self, request, pk, *args, **kwargs):
         related_task = Task.objects.filter(labels=pk)
         if bool(related_task) is True:
             messages.error(request, "Невозможно удалить метку, потому что она используется")
             return redirect('/labels/')
-        return render(request, "label_delete.html", context={'label': Label.objects.get(id=pk)})
+        messages.success(request, 'Метка успешно удалена')
+        return self.delete(request, *args, **kwargs)
