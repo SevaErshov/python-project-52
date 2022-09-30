@@ -44,7 +44,7 @@ class LabelDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     fields = ['name']
     success_url = '/labels/'
     success_message = 'Метка успешно удалена'
-    
+
     def get(self, request, pk):
         return render(request, "label_delete.html", context={'label': Label.objects.get(id=pk)})
 

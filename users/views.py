@@ -74,7 +74,7 @@ class Login(View):
             messages.success(request, 'Вы залогинены')
             return redirect('/')
         else:
-            messages.error(request, """Пожалуйста, введите правильные имя пользователя и пароль. 
+            messages.error(request, """Пожалуйста, введите правильные имя пользователя и пароль.
             Оба поля могут быть чувствительны к регистру.""")
             return render(request, 'login.html', context=context)
 
