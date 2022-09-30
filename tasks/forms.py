@@ -22,9 +22,14 @@ class CustomModelChoiceField(forms.ModelChoiceField):
 
 class CreationTaskForm(forms.ModelForm):
     executor = CustomModelChoiceField(queryset=User.objects.all(), label=_("Executor"))
+    
     class Meta:
         model = Task
         fields = ["name", "description", "status", "executor", "labels"]
+
+    def __init__(self, *args, **kwargs):
+        super(CreationTaskForm, self).__init__(*args, **kwargs)
+        self.fields['labels'].required = False
 
 
 class TaskFilter(django_filters.FilterSet):
