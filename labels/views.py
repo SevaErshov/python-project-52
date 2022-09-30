@@ -1,13 +1,11 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
-from django.utils.translation import gettext as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 from tasks.models import Task
 from labels.models import Label
-
 
 
 class LabelsList(View, LoginRequiredMixin):

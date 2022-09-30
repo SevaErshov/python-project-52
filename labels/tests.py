@@ -21,7 +21,6 @@ class TestLabel(TestCase):
             'name': 'anyname',
         })
         labels = Label.objects.all()
-
         self.assertEqual(response.status_code, 302)
         self.assertEqual(labels.count(), 4)
 
@@ -29,9 +28,8 @@ class TestLabel(TestCase):
         labels = Label.objects.all()
         success_response = self.client.get('/labels/4/update/')
         self.client.post('/labels/4/update/', data={
-            'name':'newname',
+            'name': 'newname',
         })
-
         self.assertEqual(success_response.status_code, 200)
         self.assertEqual(labels.get(pk=4).name, 'newname')
         self.assertNotEqual(labels.get(pk=2).name, 'newname')

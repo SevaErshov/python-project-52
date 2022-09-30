@@ -10,8 +10,6 @@ from tasks.forms import CreationTaskForm, TaskFilter
 from django_filters.views import FilterView
 
 
-
-
 class TasksList(FilterView, LoginRequiredMixin):
     login_url = '/login/'
     filterset_class = TaskFilter

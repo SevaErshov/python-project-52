@@ -1,8 +1,6 @@
 from django.test import TestCase
 from django.test import Client
 from tasks.models import Task
-from statuses.models import Status
-from django.contrib.auth.models import User
 
 
 class TestTask(TestCase):

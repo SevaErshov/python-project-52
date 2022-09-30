@@ -50,7 +50,7 @@ class TestUpdate(TestCase):
             'password1': self.password,
             'password2': self.password,
         })
-        
+
         self.client.post('/login/', data={
             'username': self.username,
             'password': self.password,
@@ -62,8 +62,8 @@ class TestUpdate(TestCase):
 
     def test_update(self):
         response = self.client.get('/users/6/update/')
-        success_response = self.client.get('/users/' + str(self.pk) +'/update/')
-        self.client.post('/users/' + str(self.pk) +'/update/', data={
+        success_response = self.client.get('/users/' + str(self.pk) + '/update/')
+        self.client.post('/users/' + str(self.pk) + '/update/', data={
             'username': 'MyNewUserName',
             'first_name': self.first_name,
             'last_name': self.last_name,
@@ -79,7 +79,7 @@ class TestUpdate(TestCase):
 
 class TestDelete(TestCase):
     fixtures = ['users.json']
-    
+
     def setUp(self):
         self.client = Client()
         self.username = 'TestUser'
@@ -94,7 +94,7 @@ class TestDelete(TestCase):
             'password1': self.password,
             'password2': self.password,
         })
-        
+
         self.client.post('/login/', data={
             'username': self.username,
             'password': self.password,

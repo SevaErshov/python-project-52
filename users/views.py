@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 from users.forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 
 
@@ -46,13 +45,12 @@ class UsersPage(View):
         return render(request, template, context=context)
 
 
-
 class Create(FormView):
     def post(self, request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.refresh_from_db()  
+            user.refresh_from_db()
             user.save()
             messages.success(request, "Пользователь успешно зарегистрирован")
             return redirect('/login/')
@@ -76,7 +74,8 @@ class Login(View):
             messages.success(request, 'Вы залогинены')
             return redirect('/')
         else:
-            messages.error(request, "Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут быть чувствительны к регистру.")
+            messages.error(request, """Пожалуйста, введите правильные имя пользователя и пароль. 
+            Оба поля могут быть чувствительны к регистру.""")
             return render(request, 'login.html', context=context)
 
     def get(self, request):
@@ -131,4 +130,3 @@ class RemoveUser(SuccessMessageMixin, DeleteView):
             return redirect('/users/')
         context['user'] = request.user
         return render(request, self.template_name, context=context)
-

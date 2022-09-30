@@ -1,13 +1,11 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
-from django.utils.translation import gettext as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from statuses.models import Status
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 from tasks.models import Task
-
 
 
 class StatusesList(View, LoginRequiredMixin):
@@ -45,7 +43,7 @@ class StatuseDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
     model = Status
     fields = ['name']
     success_url = '/statuses/'
-    
+
     def post(self, request, pk, *args, **kwargs):
         related_task = Task.objects.filter(status=pk)
         if bool(related_task) is True:
@@ -56,4 +54,3 @@ class StatuseDelete(SuccessMessageMixin, DeleteView, LoginRequiredMixin):
 
     def get(self, request, pk):
         return render(request, "statuse_delete.html", context={'status': Status.objects.get(id=pk)})
-        

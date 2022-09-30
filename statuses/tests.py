@@ -20,7 +20,7 @@ class TestStatus(TestCase):
             'password1': self.password,
             'password2': self.password,
         })
-        
+
         self.client.post('/login/', data={
             'username': self.username,
             'password': self.password,
@@ -45,7 +45,7 @@ class TestStatus(TestCase):
         statuses = Status.objects.all()
         success_response = self.client.get('/statuses/8/update/')
         self.client.post('/statuses/8/update/', data={
-            'name':'newname',
+            'name': 'newname',
         })
 
         self.assertEqual(success_response.status_code, 200)
