@@ -96,23 +96,23 @@ class LogOut(View):
         return redirect('/')
 
 
-class EditUser(SuccessMessageMixin, UpdateView):
-    model = User
-    form_class = RegisterForm
+class EditUser(UpdateView, SuccessMessageMixin):
     template_name = 'edit.html'
 
-    success_url = ('/users/')
+    model = User
+    form_class = RegisterForm
+    success_url = '/users/'
     success_message = 'Пользователь успешно изменён'
 
-    def get(self, request, pk):
+    def get(self, request, pk, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.error(request, 'Вы не авторизованы! Пожалуйста, выполните вход.')
             return redirect('/login/')
         if not request.user.id == pk:
             messages.error(request, 'У вас нет прав для изменения другого пользователя.')
             return redirect('/users/')
-        context['form'] = RegisterForm()
-        return render(request, self.template_name, context=context)
+        self.object = self.get_object()
+        return super().get(request, *args, **kwargs)
 
 
 class RemoveUser(SuccessMessageMixin, DeleteView):
